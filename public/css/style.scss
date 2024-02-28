@@ -1,0 +1,741 @@
+
+// Reset du navigateur pour le HTML ----------------------------------------------------------------------------------------------------------------------
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+// Reset css
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;   
+    font-family: 'Quantico', sans-serif;       
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+// styles généraux =============================================================================================
+body {
+	line-height: 1;
+    margin: auto;
+    background-color: #494949;
+    color: white;
+
+    h1 {
+        font-size: 3vw;
+        font-family: 'Quantico', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        font-family: 'Quantico', sans-serif;
+        font-size: 2.3vw;
+        padding-left: 0.3vw;
+        color: white;
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+        &:hover {
+            
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
+          }
+    }
+}
+
+
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+p {
+    color: white;
+    font-family: 'Quantico', sans-serif;
+}
+
+strong {
+    color: white;
+}
+
+
+
+h3 {
+    font-size: 2vw;
+}
+
+// Messages d'erreur ou succes ----------------------------------------------------------------------------
+
+.erreur {
+    background-color: #ffcccc;
+    color: #ff0000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+.succes {
+    background-color: #ccffcc;
+    color: #00cc00;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+// Bouttons et animations-----------------------------------------------------------------------------------------------------------------
+
+div.boutton {
+    height: 8vh;
+    width: 30vw;
+    margin: 5px;
+    background-color: #494949;
+    border-radius: 5vw;
+    text-align: center;
+    font-size: 2vw;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+    
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: lighten(#494949, 20%);
+      color: darken(#494949, 20%);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+input.champs {
+    height: 8vh;
+    width: 30vw;
+    margin: 5px;
+    background-color: #ffffff;
+    border-radius: 5vw;
+    text-align: center;
+    border: none;
+    font-size: 2vw;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    outline: none;
+
+    input[type="file"] {
+        position: absolute;
+        top: -1000px;
+      }
+}
+
+// Sélection d'une image pour un plat ------------------------------------------------------------
+label.label input[type="file"] {
+    // position: absolute;
+    // top: -1000px;
+  }
+  .label {
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 5px;
+    background: #000000;
+    display: inline-block;
+  }
+  .label:hover {
+    background: #494949;
+  }
+  .label:active {
+    background: #9fa1a0;
+  }
+  .label:invalid + span {
+    color: #000000;
+  }
+  .label:valid + span {
+    color: #000000;
+  }
+
+// -----------------------------------------------------------------------------------------------------
+
+select.champs{
+    height: 8vh;
+    width: 30vw;
+    margin: 5px;
+    background-color: #ffffff;
+    border-radius: 5vw;
+    text-align: center;
+    border: none;
+    font-size: 2vw;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    outline: none;
+}
+
+
+input.boutton {
+    height: 8vh;
+    width: 30vw;
+    margin: 5px;
+    background-color: #494949;
+    border-radius: 5vw;
+    text-align: center;
+    font-size: 2vw;
+    border-width: 0px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+    
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: lighten(#494949, 20%);
+      color: darken(#494949, 20%);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+// Lignes de séparations ==========================================================================================================================================
+
+div.ligne_separation {
+    width: 100%;
+    height: 0.5vh;
+    background-color: white;
+}
+
+div.ligne_separation_gauche {
+    width: 50%;
+    height: 0.5vh;
+    background-color: white;
+}
+
+div.ligne_separation_droite {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    div.ligne_separation_droite_moitie_gauche {
+        height: 0.5vh;
+        background-color: #494949;
+        width: 50%;
+    }
+    div.ligne_separation_droite_moitie_droite {
+        height: 0.5vh;
+        width: 50%;
+        background-color: white;
+    }
+}
+
+
+// Section connexion employé =======================================================================================================================
+
+div.section_connexion {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+
+        h2{
+            font-size: 1.5vw;
+        }
+   
+
+    div.section_connexion_conteneur{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        form.connexion_employe{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.section_connexion_contenu{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 20px;
+        }
+    }
+
+}
+
+// zone pour employe connecté =================================================================================================================================
+
+div.compte_employe{
+    background-color: black;
+
+    h2{
+        font-size: 2.5vw;
+    }
+
+    div.contenu_compte_employe{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+    }
+
+
+
+    div.ajouter_plat_modifier_plat{
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px;
+        
+        
+        div.ajouter_plat{
+            width: 50%;
+
+            div.contenu_modifier_plat{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+
+        div.titre_modifier_plat{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            
+
+            div.contenu_modifier_categorie{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+    }
+
+
+
+}
+
+div.creation_suppression_compte{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    div.conteneur_creation_suppression_compte {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form.creation_compte{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    div.contenu_creation_compte{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+}
+
+
+// Section notre histoire ======================================================================================================
+
+div.notre_histoire {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10vw;
+    background-color: black;
+    font-size: 2vw;
+
+    h2{
+        font-size: 4vw;
+        padding: 5vw;
+    }
+
+    div.contenu_notre_histoire{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+
+// Section menu ===================================================================================================================================
+
+div.section_menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h1{
+        margin: 20px;
+    }
+
+    h2{
+        font-size: 2vw;
+    }
+
+    div.titre_section{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 2vw;
+    }
+
+    div.contenu_menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        margin: 10px;
+    }
+
+    div.conteneur_item_dynamique{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        
+
+        div.items_dynamiques { 
+            width: 25%;
+            padding: 2vw;
+            
+    
+            h3.nom_item{
+    
+            }
+
+            img{
+                width: 20vw;
+                height: 20vw;
+                border-radius: 20%;
+            }
+    
+            p.description_item{
+    
+            }
+    
+            p.prix_item{
+                font-size: 2vw;
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+
+div.notre_menu {
+    background-color: #494949;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+section.entrees {
+    background-color: #494949;
+
+    
+}
+
+section.repas {
+    background-color: black;
+}
+
+section.desserts {
+    background-color: #494949;
+}
+
+
+// styles header =================================================================================================
+header {
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    background-color: #202122;
+    justify-content: space-around;
+
+
+    div.logo_header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 25%;
+        height: 95%;
+
+        img.logo_header {
+           block-size: fit-content;
+            
+        }
+    }
+
+    div.navigation_header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 35%;
+    
+        div.liens_navigation_header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+
+
+
+
+
+// styles main ===================================================================================================
+
+main {
+    display: block;
+    width: 100%;
+    position: static;
+
+    section.image_accueil {
+        text-align: center;
+
+        h1 {
+            font-size: 5vw;
+            font-weight: bold;
+            font-family: 'Quantico', sans-serif;
+            position: absolute;
+            top: 65vw;
+            left: 25vw; 
+            color: white;
+        }
+
+        img {
+            width: 100%;
+            box-sizing: fit-content;
+        }
+    }
+
+    // Section carte et inscription à l'infolettre ============================================================================================================
+    section.carte_et_inscription_infolettre{
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(121, 121, 121);
+        width: 100%;
+
+        h3 {
+            font-size: 1.5vw;
+        }
+
+        div.conteneur_carte {
+            width: 50%;
+            height: 100vh;
+            background-color: rgb(27, 27, 27);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;      
+            
+            
+            div.contenu_carte{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        div.conteneur_inscription_infolettre {
+            width: 50%;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+
+            div.contenu_inscription_infolettre{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 5px;
+            }
+            
+        }
+    }
+
+
+    // Section commentaires =========================================================================================================
+    section.section_commentaires{
+        background-color: #494949;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        text-align: center;
+        h3 {
+            font-size: 2vw;
+        }
+
+        div.titre_et_commentaires{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 25vh;
+            
+
+            div.conteneur_commentaire{
+                width: 40vw;
+                height: 20vh;
+                background-color: #202122;
+                border-radius: 10vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                block-size: fit-content;
+                
+
+                div.conteneur_etoiles{
+                    width: 100%;
+                    height: 50%;
+
+                    div.etoile{
+                        font-size:300%;
+                        color:rgb(243, 200, 60);
+                    }
+                }
+
+                p{
+                    padding: 15px;
+                }
+
+                p.fade-out{
+                    opacity: 0;
+                    transition: opacity 0.5s ease-out;
+                }
+            }
+
+            div.conteneur_commentaire.fade-out{
+                opacity: 0;
+                transition: opacity 0.5s ease-out;
+            }
+        }
+
+    }
+
+
+}
+
+// styles footer =================================================================================================
+
+footer {
+    width: 100%;
+    height: 20rem;
+    background-color: #202122;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: static;
+
+    a.section_employes{
+        font-size: 1vw;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+
+    
+    div.navigation_footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 3.5em;
+        padding-bottom: 3.5em;
+    }
+
+    div.logo_footer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 25%;
+
+        img.logo_footer {
+            block-size: fit-content;
+            
+        }
+    }
+
+    div.nous_joindre {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+
+
+
+        strong.footer {
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 2vw;
+
+        }
+
+        div.icones_reseaux_sociaux {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            box-sizing: fit-content;
+        }
+
+        p.numero_footer{
+            display: flex;
+            justify-content: center;
+            font-size: 1.5vw;
+        }
+
+        p.adresse_footer{
+            display: flex;
+            justify-content: center;
+            font-size: 1.5vw;
+        }
+
+        p.copyright_footer{
+            display: flex;
+            justify-content: center;
+            font-size: 1vw;
+        }
+    }
+
+}
+
+
